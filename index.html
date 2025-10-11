@@ -26,6 +26,30 @@
     <body>
     
         <!-- navbar [PLACEHOLDER] [ADDED IN UNIT 4] -->
+         <!-- navbar
+
+Purpose:
+- Navigation bar that allows users to jump to different sections of the webpage
+- Also holds buttons for user settings (dark mode, reduce motion)
+
+When To Modify:
+- [ ] Project 4 (REQUIRED FEATURE)
+- [ ] Project 5 (REQUIRED FEATURE) 
+- [ ] Project 8 (STRETCH FEATURE) 
+- [ ] Any time between / after
+-->
+<div class="navbar">
+    <nav>
+            <ul>
+                <li><a href="#event-details">Date / Location</a></li>
+                <li><a href="#AboutEvent">About the Event</a></li>
+                <li><a href="#sessions">Sessions</a></li>
+                <li><a href="#schedule-title">Schedule  </a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+    </nav>
+</div>
+         
 
         <!-- headings
 
@@ -42,11 +66,12 @@
         -->
     <div class="box"> 
         <div class="header">
-      <img id="header-img" src="https://cdn2.iconfinder.com/data/icons/sustainable-business-soft-fill/60/-Mental-Health-mentality-healthy-brain-512.png" width="150px" alt="Brain icon for a mental health awareness event" />
-      <h1>Mindful Moments</h1>
-      <h2>Subtitle</h2>
-      <button class="header-button" type="button">Events</button>
-      <button class="header-button" type="button">Button 2</button>
+            <img id="header-img" src="https://cdn2.iconfinder.com/data/icons/sustainable-business-soft-fill/60/-Mental-Health-mentality-healthy-brain-512.png" width="150px" alt="Brain icon for a mental health awareness event" />
+            <h1>Mindful Moments</h1>
+            <h2>Subtitle</h2>
+            <button class="header-button" type="button">Sign-In</button>
+            <button class="header-button" type="button">Register</button>
+        
     </div>
         
         <!-- about
@@ -61,19 +86,10 @@
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-    <div id="AboutEvent">
-        <nav>
-            <ul>
-                <li><a href="#">Date / Location</a></li>
-                <li><a href="#">About the Event</a></li>
-                <li><a href="#">Speaker / Workshops</a></li>
-                <li><a href="#">Schedule</a></li>
-                <li><a href="#">Resources</a></li>
-            </ul>
-        </nav>
-        <h2>About the Event</h2>
-        <p>Mental wellness, peace, and positive growth.</p>
-    </div>
+    <div id="AboutEvent" style="text-align: center; margin-bottom: 40px;">
+                <h2>About the Event</h2>
+                <p>Mental wellness, peace, and positive growth.</p>
+            </div>
         <!-- schedule
 
         Purpose:
@@ -85,14 +101,29 @@
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-        <h2 style="text-align: center;">Event Schedule</h2>
+        <div id="event-details" style="text-align: center; margin-bottom: 40px;">
+                <h2>Event Details (Date & Location)</h2>
+                <p> event date, time, and location.</p>
+            </div>
     <div id="MidSec"> 
         <iframe width="360" height="250" src="https://www.youtube.com/embed/6H-PLF2CR18?si=4Bst5ODWR5XG8JSy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <img  id="MHM" alt="Image description" src="./img/MHM.webp"/>
         <p style="text-align: center;"> Join us for an engaging workshop on finding peace in daily life. </p>
     </div>
-       
-    
+
+    <div id="sessions" style="text-align: center; margin-bottom: 40px;">
+                <h2>Speakers & Sessions</h2>
+                <p>This section will hold information about the speakers and the workshops they will lead.</p>
+    </div>
+
+    <div id="schedule-title" style="text-align: center; margin-bottom: 40px;">
+                <h2>Event Schedule</h2>
+                <p>A detailed timetable of all activities.</p>
+    </div>   
+     <div id="resources" style="text-align: center; margin-bottom: 40px;">
+                <h2>Mental Health Resources</h2>
+                <p>mental health support and organizations.</p>
+     </div>
         <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
         <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
 
@@ -126,6 +157,14 @@
         </a>
             
         <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
+        <div class="footer">
+            <p>© 2024 Mindful Moments</p>
+            <ul>
+                <li><a href="/privacy">Privacy Policy</a></li>
+                <li><a href="/contact">Contact Us</a></li>
+            </ul>
+        </div>
+
         <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
     </div>
     </body>

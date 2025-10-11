@@ -1,25 +1,16 @@
 
-*,
-*::before,
-*::after{
-  box-sizing: border-box;
-}
 
-*{
-  margin: 0;
-  padding: 0;
-  
-}
 
 html, body {
   height: 100%;
   width: 100%;
-  background-color: rgba(21, 128, 11, 0.39);
+  background-color: #09be09bd;
+ 
 }
 
 .box {
-  background-color: #2aa530 !important;
-  width:450px;
+  background-color: #09be09bd;
+  width:800px;
   padding: 45px;
   border: 10px solid black;
   margin: 20px auto 5px auto;
@@ -30,7 +21,7 @@ html, body {
   margin-bottom: 75px;
   text-align: center;
   border: 2px solid #000000;
-  background-color: #2aa530 !important;
+  background-color: #09be09bd;
 }
 
 #header-left {
@@ -46,59 +37,108 @@ html, body {
 }
 
 #header-img {
-  margin: 10px 0 10px 0; /* top right bottom left */
+  margin: 10px 0 10px 0; 
   border-radius: 10px;
-  width: 120px;
+  width: 150px;
   max-width: 150px;
 }
-
-.header-button {
-  background-color: #139729 !important;
-  color: #f1ee1e !important;
-  font-size: larger;
-  padding: 10px 20px;
-  margin: 10px 5px 10px 5px;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  text-align: center;
+html {
+  scroll-behavior: smooth;
 }
+
+
 
 
 a {
-  color: #4ca83a;
+  color: #d9ff00;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: bold
+  ;
+}
+a:link{
+  text-decoration: none;
+  color: #d9ff00;
+}
+a:visited{
+  text-decoration: none;
+  color: #2600ff;
 }
 a:hover {
-  text-decoration: underline;
-  color: #3a2183;
+  text-decoration: none;
+  color: #ff0000;
+
+}
+A:active {
+  text-decoration: none;
+  color: #00ff00;
 }
 #aboutWeek {
   font-style: italic;
 }
 #MainBrain {width: 150px;}
 #HeadingArea{text-align: center;}
-#AboutEvent{text-align: center;}
-#MHM{text-align: center;
-font-size: 150px;
-width: 75%;
+#AboutEvent{text-align: center;
+  font-family: cursive;
+margin-bottom: 24px;
+accent-color: #0213fc;}
+#MHM{ display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  justify-content: space-between;
 
 }
 
-#MidSec{text-align: center;}
-#Links{text-align: center;}
 
-ul{list-style-type: none; 
+#MidSec{text-align: center;}
+#Links{text-align: center;
+color: #d9ff00;
+text-decoration: underline;
+background: rgb(0, 0, 0);
+padding: 24px 0 ;
+margin: 32px auto;
+border-radius: 20px;
+}
+#AboutEvent,
+#event-details,
+#sessions,
+#schedule-title,
+#resources
+ {
+  background: #55555577;         
+  margin: 32px auto;           
+  padding: 24px 16px;          
+  border-radius: 12px;         
+  
+  max-width: 700px;            
+}
+
+ul {
+  position: fixed;
+   border: 3px solid #d9ff00;
+  list-style-type: none; 
   margin: 0;
-  padding: 0;
+  padding: 14px 15px;
   overflow:hidden;
   display: flex; 
-  justify-content: space-evenly;}
+  justify-content: space-between;
+  background-color: #4c0488;
+  color: #000000;
+  text-decoration: none;
+  gap: 32px;
+}
   
 #AboutEvent {
   margin-bottom: 24px;
   text-align: center;
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #00000065;
 }
 
 /*** VSCodeEDU preview fix 
@@ -111,7 +151,7 @@ ul{list-style-type: none;
   - If you change the background color of your webpage, you may need to update this rule too.
 ***/
 html {
-    background-color: var(--bg-color);
+    background-color: black;
 }
 
 /*** body ***
@@ -128,15 +168,27 @@ html {
 
 body {
     /* Add a background color or image */
-    background-color: var(--bg-color); /* see bottom of file for color variables */
+    background-color: black; /* see bottom of file for color variables */
+  .header-button {
+  background-color: #9e41eb !important;
+  color: #ecf007 !important;
+  font-size: larger;
+  padding: 10px 20px;
+  margin: 10px 5px 10px 5px;
+  border: groove;
+  border-radius: 100px;
+  cursor: pointer;
+  text-align: center;
+}
+
 
     /* Customize the default size, color, and font for text*/
-    font-size: 16px;
-    color: var(--text-color);
-    font-family: Tahoma, sans-serif; /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
+    font-size: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif sans-serif; /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
 
     /* Put space around the edges of the webpage */
-    margin: 50px;
+    margin: 25px;
 }
 
 /*** Text ***
@@ -175,15 +227,7 @@ a * {
     
 }
 
-button {
-    /* Example Style, replace with your own! */
-    background-color: rgb(19, 124, 19);    /* button color */
-    color: rgb(151, 58, 58);               /* text color */
-    border: none;               /* hides the default border */
-    padding: 5px 12px;          /* space between button's text and edge */
-    border-radius: 5px;         /* curved edges instead of square */
-    cursor: pointer;            /* makes the cursor change when over button */
-}
+
 
 button:hover {
     /* Make the button look different when the user hovers over it */
@@ -231,6 +275,7 @@ button:hover {
   - [ ] Any time after
 ***/
 
+
 /*** Schedule Section ***
   
   Purpose:
@@ -242,6 +287,7 @@ button:hover {
   - [ ] Any time after
 ***/
 
+
 /*** Links Section ***
   
   Purpose:
@@ -252,6 +298,7 @@ button:hover {
   - [ ] Project 4 (STRETCH FEATURE) 
   - [ ] Any time after
 ***/
+
 
 /*** RSVP [PLACEHOLDER] [ADDED IN UNIT 6] ***/
 /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
@@ -272,7 +319,7 @@ button:hover {
 :root {
     /* Light Mode */
     --bg-color: #a6a0cf;
-    --text-color: #231942;
+    --text-color: #ad12c2d7;
 
     /* Dark Mode */
     --bg-color-dark-mode: #3e3377;
@@ -289,4 +336,3 @@ button:hover {
     --error-color: #f8bbd0;
     --error-color-border: #e63946;
 }
-
