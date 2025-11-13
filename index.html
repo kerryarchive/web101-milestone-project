@@ -20,7 +20,7 @@
         </style>
         <link rel="stylesheet" href="styles.css" />
         <link rel="icon" href="https://tse2.mm.bing.net/th/id/OIP.d8j7t8oG3su4dJ4jqPsoiwHaHS?pid=ImgDet&w=176&h=173&c=7&o=7&rm=3" type="image/png" />
-        <script type="text/javascript" src="script.js"></script>
+        
     </head>
     
     <body>
@@ -46,6 +46,7 @@ When To Modify:
                 <li><a href="#sessions">Sessions</a></li>
                 <li><a href="#schedule-title">Schedule  </a></li>
                 <li><a href="#resources">Resources</a></li>
+                <li><button id="theme-button">Toggle Light Mode</button></li>
             </ul>
     </nav>
 </div>
@@ -65,14 +66,18 @@ When To Modify:
        
         -->
     <div class="box"> 
-        <div class="header">
-            <img id="header-img" src="https://cdn2.iconfinder.com/data/icons/sustainable-business-soft-fill/60/-Mental-Health-mentality-healthy-brain-512.png" width="150px" alt="Brain icon for a mental health awareness event" />
-            <h1>Mindful Moments</h1>
-            <h2>Subtitle</h2>
-            <button class="header-button" type="button">Sign-In</button>
-            <button class="header-button" type="button">Register</button>
         
-    </div>
+        <div class="header-container">
+            <div class="header-item">
+                <img id="header-img" src="https://cdn2.iconfinder.com/data/icons/sustainable-business-soft-fill/60/-Mental-Health-mentality-healthy-brain-512.png" width="150" alt="Brain icon for a mental health awareness event" />
+            </div>
+            <div class="header-item">
+                <h1>Mindful Moments</h1>
+                <h2>Subtitle</h2>
+                <button class="header-button" type="button">Sign-In</button>
+                <button class="header-button" type="button">Register</button>
+            </div>
+        </div>
         
         <!-- about
 
@@ -125,6 +130,49 @@ When To Modify:
                 <p>mental health support and organizations.</p>
      </div>
         <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
+         <!-- rsvp
+
+Purpose:
+- Section for users to sign up for the event
+- Contains a form for users to input their information, 
+and a list of other users who have signed up
+
+When To Modify:
+- [ ] Project 6 (REQUIRED FEATURE) 
+- [ ] Project 6 (STRETCH FEATURE) 
+- [ ] Any time after
+--> 
+<div id="rsvp">
+    <h2>RSVP</h2>
+    <div class="rsvp-container">
+        
+        <div class="rsvp-column">
+            <div class="rsvp-para">
+                <p>Ready to join us for a day of peace and positive growth? Fill out the form below to secure your spot!</p>
+            </div>
+            <div class="rsvp-participants">
+                <p>🎟️ DJ from Texas has RSVP'd.</p>
+                <p>🎟️ Amy from New York has RSVP'd.</p>
+                <p>🎟️ Teresa from Montana has RSVP'd.</p>
+            </div>
+        </div>
+
+        <div class="form-container rsvp-column">
+            <p id="validation-message" style="color: red; font-weight: bold;"></p>
+            <form id="rsvp-form" title="rsvp-form">
+                <label for="full-name">Name:</label>
+                <input id="full-name" name="full-name" type="text" placeholder="Your full name" />
+
+                <label for="location">Home State:</label>
+                <input id="location" name="location" type="text" placeholder="e.g. Georgia" />
+
+                <label for="email">Email:</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+            </form>
+            <button id="rsvp-button">Submit RSVP</button>
+        </div> 
+
+    </div> </div>
         <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
 
         <!-- links
@@ -166,6 +214,8 @@ When To Modify:
         </div>
 
         <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
+
     </div>
+    <script type="text/javascript" src="script.js"></script>
     </body>
 </html>

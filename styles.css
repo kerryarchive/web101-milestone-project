@@ -10,18 +10,42 @@ html, body {
 
 .box {
   background-color: #09be09bd;
-  width:800px;
+  width: calc(100% - 80px);
   padding: 45px;
-  border: 10px solid black;
-  margin: 20px auto 5px auto;
+  border: 12px solid black;
+  margin: 40px auto;
 
 }
-.header {
-  padding-top: 100px;
-  margin-bottom: 75px;
-  text-align: center;
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 20px;
+  margin-bottom: 40px;
   border: 2px solid #000000;
   background-color: #09be09bd;
+  gap: 20px;
+}
+
+/* header items (flex children) — use nth-of-type per course notes */
+.header-item:nth-of-type(1) {
+  /* image column */
+  flex: 0 0 160px;
+}
+.header-item:nth-of-type(2) {
+  /* content column */
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .header-item:nth-of-type(2) { text-align: center; }
 }
 
 #header-left {
@@ -35,6 +59,7 @@ html, body {
   float: right;
   padding-right: 20px;
 }
+
 
 #header-img {
   margin: 10px 0 10px 0; 
@@ -134,11 +159,24 @@ ul {
 }
 
 .footer {
-  position: relative;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
   background-color: #00000065;
+  display: flex;
+}
+#theme-button{
+  background-color: #9e41eb !important;
+  color: #ecf007 !important;
+  font-size: larger;
+  padding: 10px 20px;
+  margin: 15px 5px 10px 5px;
+  border: groove;
+  border-radius: 75px;
+  cursor: pointer;
+  text-align: center;
+ 
 }
 
 /*** VSCodeEDU preview fix 
@@ -190,6 +228,31 @@ body {
     /* Put space around the edges of the webpage */
     margin: 25px;
 }
+  body {
+    /* Add a background color or image */
+    background-color: black; /* see bottom of file for color variables */
+
+    /* Customize the default size, color, and font for text*/
+    font-size: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* Put space around the edges of the webpage */
+    margin: 25px;
+  }
+
+  /* header buttons (top right) */
+  .header-button {
+    background-color: #9e41eb !important;
+    color: #ecf007 !important;
+    font-size: larger;
+    padding: 10px 20px;
+    margin: 10px 5px 10px 5px;
+    border: groove;
+    border-radius: 100px;
+    cursor: pointer;
+    text-align: center;
+  }
 
 /*** Text ***
   
@@ -202,36 +265,8 @@ body {
   - [ ] Any time after
 ***/
 
-h1 {
-    
-}
-
-h2 {
-    
-}
-
-h3 {
-    
-}
-
-h4 {
-    
-}
-
-p {
-    
-}
-
-a,
-a * {
-    
-}
-
-
-
-button:hover {
-    /* Make the button look different when the user hovers over it */
-}
+/* Heading, paragraph and link defaults intentionally left blank for now */
+/* Text element defaults (left intentionally blank) */
 
 /*** header ***
   
@@ -244,9 +279,7 @@ button:hover {
   - [ ] Any time after
 ***/
 
-.header { /* Example A: This styles elements with class="header" */
-    
-}
+/* .header (legacy) left intentionally empty — using .header-container instead */
 
 /*** footer ***
   
@@ -258,11 +291,45 @@ button:hover {
   - [ ] Any time after
 ***/
 
-.footer { /* Example B: This styles elements with class="footer" */
-    
-}
+/* footer container rules preserved above */
 
 /*** Navbar [PLACEHOLDER] [ADDED IN UNIT 4] ***/
+
+/*** Navigation bar (navbar) ***
+  Purpose:
+  - Add style rules for your website's navbar
+*/
+.navbar ul {
+  z-index: 1000; /* Ensure navbar is on top */
+  list-style-type: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 12px 16px;
+  background-color: rgba(76,4,136,0.95);
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.navbar ul li {
+  margin: 0 8px;
+}
+
+.navbar ul li a {
+  display: block;
+  text-decoration: none;
+  color: #d9ff00;
+  padding: 6px 10px;
+}
+
+.navbar ul li a:hover {
+  background-color: rgba(217,255,0,0.12);
+  border-radius: 6px;
+}
 
 /*** About Section ***
   
@@ -301,10 +368,134 @@ button:hover {
 
 
 /*** RSVP [PLACEHOLDER] [ADDED IN UNIT 6] ***/
+/*** RSVP Section ***
+  
+  Purpose:
+  - Add style rules for your website's RSVP form
+
+  When To Modify:
+  - [ ] Project 6 (REQUIRED FEATURE)
+  - [ ] Project 7 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.rsvp-container {
+    
+    display: flex;
+    flex-direction: row; 
+    gap: 20px; 
+    
+    
+    width: 80%; 
+    max-width: 900px;
+    margin: 20px auto 50px auto; 
+    
+    padding-bottom: 0;
+    font-weight: normal; 
+}
+.rsvp-column {
+    flex: 1 1 50%; 
+}
+.rsvp-participants {
+    
+    background-color: #55555577;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 150px; 
+}
+.form-container {
+    
+    background-color: #55555577; 
+    padding: 20px; 
+    border-radius: 12px;
+    max-width: 100%;
+    margin: 0;
+}
+#rsvp-form label {
+    font-weight: bold;
+    color: #d9ff00; /* Use your accent color for labels */
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-right: 50px;
+
+
+}
+#rsvp-form input[type="text"],
+#rsvp-form input[type="email"] {
+    padding: 10px;
+    border: 2px solid #4c0488; /* Use your purple color for the border */
+    border-radius: 50px;
+    background-color: #000000;
+    color: #eeff06;
+    margin: 10px 50px 10px 100px;
+}
+#rsvp-button {
+    /* Style button similar to header buttons for consistency */
+    background-color: #9e41eb !important;
+    color: #ecf007 !important;
+    font-size: large;
+    padding: 10px 20px;
+    border: 2px solid #ecf007;
+    border-radius: 75px;
+    cursor: pointer;
+    width: 100%; /* Make button full width of the form container */
+}
+@media (max-width: 800px) {
+    .rsvp-container {
+        flex-direction: column; /* Stack them vertically on smaller screens */
+        width: 95%; /* Make it wider for mobile */
+    }
+}
+
+/* Light mode: make page interior white while keeping black outer background */
+body.light-mode {
+  background-color: white !important;
+  color: #111 !important;
+}
+body.light-mode .box {
+  background-color: #ffffff !important;
+  border-color: #000000 !important;
+  width: calc(100% - 40px);
+  margin: 20px auto;
+}
+
+/* Add other rsvp-related selectors here */
+.rsvp-para {
+
+    width: 100%; /* Take up the full width of its new parent (.rsvp-column) */
+    padding-right: 0; /* No need for right padding here */
+    margin: 0; 
+    margin-bottom: 20px; /* Add space below the text */
+    text-align: left;
+}
 /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
 /*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
 /*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
 
+/* Default dark mode style (see body.dark-mode rules below) */
+
+
+/* Simple light/dark helpers (kept minimal for Web101) */
+body.dark-mode {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+body.dark-mode .box {
+  background-color: rgba(9,190,9,0.74) !important;
+  border-color: #d9ff00 !important;
+}
+
+/* Single simple light-mode rule: make interior white, keep outer black */
+body.light-mode {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+body.light-mode .box {
+  background-color: #ffffff !important;
+  border-color: #000000 !important;
+}
 /*** Custom Colors (OPTIONAL) ***
   
   Purpose:
@@ -321,18 +512,46 @@ button:hover {
     --bg-color: #a6a0cf;
     --text-color: #ad12c2d7;
 
-    /* Dark Mode */
-    --bg-color-dark-mode: #3e3377;
-    --text-color-dark-mode: #fff;
+    /* Removed duplicate Dark/Light placeholder block — using body.light-mode / body.dark-mode helpers below */
+  border-color: var(--theme-accent-dark) !important;
+}
+.dark-mode .header {
+  background-color: var(--theme-box-dark) !important;
+}
+.dark-mode a {
+  color: var(--theme-accent-dark) !important;
+}
 
-    /* Accent Colors */
-    --accent-color-light: #d2cff5;
-    --accent-color-medium: #684fb5;
-    --accent-color-dark: #482f95;
-    --accent-color-darkest: #231942;
-    --accent-color-green: #28eb76;
+/* Light mode */
+.light-mode,
+.light-mode html,
+.light-mode body {
+  background-color: var(--theme-bg-light) !important;
+  color: var(--theme-text-light) !important;
+}
+.light-mode .box {
+  background-color: var(--theme-box-light) !important;
+  border-color: var(--theme-text-light) !important;
+}
 
-    /* Error Colors */
-    --error-color: #f8bbd0;
-    --error-color-border: #e63946;
+/* Final override: enforce simple white light-mode requested by student */
+body.light-mode {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+}
+body.light-mode .box {
+  background-color: #ffffff !important;
+  border-color: #000000 !important;
+  width: calc(100% - 40px) !important;
+  margin: 20px auto !important;
+}
+.light-mode .header {
+  background-color: var(--accent-color-light-bg) !important;
+}
+.light-mode a {
+  color: var(--theme-accent-light) !important;
+}
+
+#theme-button {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
