@@ -413,7 +413,7 @@ body {
 }
 #rsvp-form label {
     font-weight: bold;
-    color: #d9ff00; /* Use your accent color for labels */
+    color: #d9ff00; 
     margin-top: 10px;
     display: flex;
     flex-direction: row;
@@ -444,12 +444,12 @@ body {
 }
 @media (max-width: 800px) {
     .rsvp-container {
-        flex-direction: column; /* Stack them vertically on smaller screens */
+        flex-direction: column; 
         width: 95%; /* Make it wider for mobile */
     }
 }
 
-/* Light mode: make page interior white while keeping black outer background */
+
 body.light-mode {
   background-color: white !important;
   color: #111 !important;
@@ -465,7 +465,7 @@ body.light-mode .box {
 .rsvp-para {
 
     width: 100%; /* Take up the full width of its new parent (.rsvp-column) */
-    padding-right: 0; /* No need for right padding here */
+    padding-right: 0; 
     margin: 0; 
     margin-bottom: 20px; /* Add space below the text */
     text-align: left;
@@ -474,10 +474,10 @@ body.light-mode .box {
 /*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
 /*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
 
-/* Default dark mode style (see body.dark-mode rules below) */
 
 
-/* Simple light/dark helpers (kept minimal for Web101) */
+
+
 body.dark-mode {
   background-color: #000000 !important;
   color: #ffffff !important;
@@ -487,7 +487,7 @@ body.dark-mode .box {
   border-color: #d9ff00 !important;
 }
 
-/* Single simple light-mode rule: make interior white, keep outer black */
+
 body.light-mode {
   background-color: #ffffff !important;
   color: #111111 !important;
@@ -512,7 +512,7 @@ body.light-mode .box {
     --bg-color: #a6a0cf;
     --text-color: #ad12c2d7;
 
-    /* Removed duplicate Dark/Light placeholder block — using body.light-mode / body.dark-mode helpers below */
+    
   border-color: var(--theme-accent-dark) !important;
 }
 .dark-mode .header {
@@ -534,7 +534,7 @@ body.light-mode .box {
   border-color: var(--theme-text-light) !important;
 }
 
-/* Final override: enforce simple white light-mode requested by student */
+
 body.light-mode {
   background-color: #ffffff !important;
   color: #111111 !important;

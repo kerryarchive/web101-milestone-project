@@ -11,7 +11,7 @@
 // Step 1: Select the theme button
 const themeButton = document.getElementById('theme-button');
 
-// Simple teacher-style toggle: toggle a single class on <body>, persist choice
+
 function toggleTheme() {
   // toggle returns true when the class is present after the toggle
   const isLight = document.body.classList.toggle('light-mode');
@@ -40,7 +40,7 @@ if (themeButton) themeButton.addEventListener('click', toggleTheme);
 const rsvpForm = document.getElementById('rsvp-form');
 const rsvpButton = document.getElementById('rsvp-button');
 
-// Simple RSVP implementation for Web101: add a participant and update a count.
+
 let rsvpCount = document.querySelectorAll('.rsvp-participants p').length;
 
 function updateRsvpCount() {
@@ -73,7 +73,7 @@ const addParticipant = (event) => {
   listitem.textContent = `🎟️ ${name} from ${state} has RSVP'd.`;
   rsvpList.prepend(listitem);
 
-  // Clear the form fields after submission
+  // Clear the form fields 
   nameInput.value = '';
   stateInput.value = '';
   emailInput.value = '';
