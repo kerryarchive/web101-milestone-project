@@ -106,16 +106,49 @@ A:active {
   font-family: cursive;
 margin-bottom: 24px;
 accent-color: #0213fc;}
-#MHM{ display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-  justify-content: space-between;
-
+#MHM {
+    width: 300px;
+    height: auto;
 }
 
+#MidSec{display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center;
+    gap: 20px;              
+    margin: 40px auto;
+}      
+#MidSec iframe, #MidSec img {
+    border-radius: 15px;      /
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+    max-width: 100%;          /* Ensures they don't overflow on mobile */
+}
+.event-card {
+    background-color: rgba(0, 0, 0, 0.5); 
+    border: 2px solid #ecf007;         
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px auto;                   
+    max-width: 400px;                    
+    transition: transform 0.3s;          
+}
 
-#MidSec{text-align: center;}
+.event-card h3 {
+    color: #ecf007;
+    margin-top: 0;
+}
+
+.event-card a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Hover Effect: Pop up when mouse goes over */
+.event-card:hover {
+    transform: scale(1.05);
+    background-color: #4c0488; 
+}
 #Links{text-align: center;
 color: #d9ff00;
 text-decoration: underline;
@@ -379,6 +412,15 @@ body {
   - [ ] Any time after
 ***/
 
+#rsvp {
+    width: 100%;
+    text-align: center;
+}
+
+#rsvp h2 {
+    margin-bottom: 30px;
+}
+
 .rsvp-container {
     
     display: flex;
@@ -388,7 +430,7 @@ body {
     
     width: 80%; 
     max-width: 900px;
-    margin: 20px auto 50px auto; 
+    margin: 0 auto 50px auto; 
     
     padding-bottom: 0;
     font-weight: normal; 
@@ -471,7 +513,90 @@ body.light-mode .box {
     text-align: left;
 }
 /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
+
+/*** Animations  ***
+  
+  Purpose:
+  - Add style rules to enable scroll animations for your website
+
+  When To Modify:
+  - [x] Project 8 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.revealable {
+  --reveal-distance: 150px; /* CSS Variable */
+
+  scroll-margin-top: var(--reveal-distance);
+  opacity: 0;
+  transition: all 2s ease;
+  position: relative;
+  transform: translateY(var(--reveal-distance));
+}
+
+.active {
+  scroll-margin-top: 0;
+  transform: translateY(0);
+  opacity: 1;
+}
 /*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+/*** Success Modal ***
+  
+  Purpose:
+  - Add style rules to your website's pop-up modal, which appears
+    when a user successfully submits the RSVP form
+
+  When To Modify:
+  - [x] Project 9 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.modal {
+  position: fixed; /* modal cannot move around the screen */
+  z-index: 2;      /* modal appears above other elements */ 
+  
+  /* Make the modal fill the entire screen */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Add a semi-transparent background to shadow non-modal elements*/
+  background-color: rgba(0,0,0,0.4); /* 40% opacity black */
+
+  /* Flexbox settings for modal */
+  display: none;   /* Hidden by default; JS will change to flex */
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+    /* Change modal size and spacing here */
+    padding: 50px;
+    width: 55%;
+    max-width: 500px; /* Added max-width so it looks good on desktop */
+
+    /* Customize modal style here */
+    background-color: #4c0488; /* Matching your purple theme */
+    color: #ecf007; /* Matching your yellow text */
+    text-align: center;
+    font-size: 1rem;
+    font-family: monospace;
+    border: 2px solid #ecf007;
+    border-radius: 20px;
+
+    /* Optional: Use flexbox to customize .modal-item layout */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-item {
+    /* Optional: Style individual elements within the modal */
+    display: flex;
+    justify-content: center;
+}
 /*** Dark Mode [PLACEHOLDER] [ADDED IN UNIT 5] ***/
 
 

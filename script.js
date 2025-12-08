@@ -57,20 +57,23 @@ function updateRsvpCount() {
 
 const addParticipant = (event) => {
   event.preventDefault();
-  // Basic validation (validateForm returns true if inputs absent during build)
+  // Basic validation
   if (!validateForm()) return;
 
   const rsvpList = document.querySelector('.rsvp-participants');
   const nameInput = document.getElementById('full-name');
   const stateInput = document.getElementById('location');
   const emailInput = document.getElementById('email');
-  if (!rsvpList || !nameInput || !stateInput || !emailInput) return;
 
-  const name = nameInput.value.trim();
-  const state = stateInput.value.trim();
+  // Create the person object
+  let person = {
+      name: nameInput.value.trim(),
+      location: stateInput.value.trim(),
+      email: emailInput.value.trim()
+  };
 
   const listitem = document.createElement('p');
-  listitem.textContent = `🎟️ ${name} from ${state} has RSVP'd.`;
+  listitem.textContent = `🎟️ ${person.name} from ${person.location} has RSVP'd.`;
   rsvpList.prepend(listitem);
 
   // Clear the form fields 
@@ -81,6 +84,9 @@ const addParticipant = (event) => {
   // update count
   rsvpCount = rsvpCount + 1;
   updateRsvpCount();
+  
+  // Call the modal function!
+  toggleModal(person);
 }
 
 if (rsvpForm) rsvpForm.addEventListener('submit', addParticipant);
@@ -112,5 +118,90 @@ const validateForm = () => {
 };
 
 /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
+/*** Scroll Animations ***
+  
+  Purpose:
+  - Use this starter code to add scroll animations to your website.
+
+  When To Modify:
+  - [x] Project 8 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+// Step 1: Select all elements with the class 'revealable'.
+let revealableContainers = document.querySelectorAll('.revealable');
+
+// Step 2: Write function to reveal elements when they are in view.
+const reveal = () => {
+    for (let i = 0; i < revealableContainers.length; i++) {
+        let current = revealableContainers[i];
+
+        // Get current height of container and window
+        let windowHeight = window.innerHeight;
+        let topOfRevealableContainer = current.getBoundingClientRect().top;
+        let revealDistance = parseInt(getComputedStyle(current).getPropertyValue('--reveal-distance'), 10);
+
+        // If the container is within range, add the 'active' class to reveal
+        if (topOfRevealableContainer < windowHeight - revealDistance) {
+            current.classList.add('active');
+        }
+        // If the container is not within range, hide it by removing the 'active' class
+        else { 
+            current.classList.remove('active');
+        }
+    }
+}
+
+// Step 3: Whenever the user scrolls, check if any containers should be revealed
+window.addEventListener('scroll', reveal);
 
 /*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+/*** Modal ***
+  
+  Purpose:
+  - Use this starter code to add a pop-up modal to your website.
+
+  When To Modify:
+  - [x] Project 9 (REQUIRED FEATURE)
+  - [ ] Project 9 (STRETCH FEATURE)
+  - [ ] Any time after
+***/
+
+// Animation Helper Variables
+let rotateFactor = 0;
+const modalImage = document.getElementById('modal-image');
+
+// Helper function to wiggle the image
+const animateImage = () => {
+    if (rotateFactor === 0) {
+        rotateFactor = 15;
+    } else {
+        rotateFactor = 0;
+    }
+    if(modalImage) {
+        modalImage.style.transform = `rotate(${rotateFactor}deg)`;
+        modalImage.style.transition = "0.3s ease";
+    }
+}
+
+const toggleModal = (person) => {
+    const modal = document.getElementById('success-modal');
+    const modalText = document.getElementById('modal-text');
+
+    if (!modal || !modalText) return;
+
+    // Update modal display to flex
+    modal.style.display = 'flex';
+
+    // Update modal text to personalized message
+    modalText.textContent = `Thanks for RSVPing, ${person.name}! See you in ${person.location}!`;
+
+    // Start the animation (every 500ms)
+    let intervalId = setInterval(animateImage, 500);
+
+    // Set modal timeout to 5 seconds, then hide it
+    setTimeout(() => {
+        modal.style.display = 'none';
+        clearInterval(intervalId); // Stop the animation
+    }, 5000);
+}

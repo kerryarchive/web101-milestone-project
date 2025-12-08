@@ -73,7 +73,7 @@ When To Modify:
             </div>
             <div class="header-item">
                 <h1>Mindful Moments</h1>
-                <h2>Subtitle</h2>
+                <h2>Finding Peace in the chaos</h2>
                 <button class="header-button" type="button">Sign-In</button>
                 <button class="header-button" type="button">Register</button>
             </div>
@@ -91,9 +91,9 @@ When To Modify:
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-    <div id="AboutEvent" style="text-align: center; margin-bottom: 40px;">
+    <div id="AboutEvent" class="revealable" style="text-align: center; margin-bottom: 40px;">
                 <h2>About the Event</h2>
-                <p>Mental wellness, peace, and positive growth.</p>
+                <p>Join us for a dedicated day of mental wellness, peace, and positive growth. This workshop is designed to help students balance academic pressure with personal well being through guided meditation and open discussion.</p>
             </div>
         <!-- schedule
 
@@ -106,9 +106,11 @@ When To Modify:
         - [ ] Project 4 (STRETCH FEATURE) 
         - [ ] Any time between / after
         --> 
-        <div id="event-details" style="text-align: center; margin-bottom: 40px;">
-                <h2>Event Details (Date & Location)</h2>
-                <p> event date, time, and location.</p>
+        <div id="event-details" class="revealable" style="text-align: center; margin-bottom: 40px;">
+                <h2>Event Details </h2>
+                <p><strong>Date:</strong> Saturday, December 14th, 2025</p>
+                <p><strong>Time:</strong> 10:00 AM - 2:00 PM</p>
+                <p><strong>Location:</strong> Student Wellness Center, Room 204</p>
             </div>
     <div id="MidSec"> 
         <iframe width="360" height="250" src="https://www.youtube.com/embed/6H-PLF2CR18?si=4Bst5ODWR5XG8JSy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -116,18 +118,44 @@ When To Modify:
         <p style="text-align: center;"> Join us for an engaging workshop on finding peace in daily life. </p>
     </div>
 
-    <div id="sessions" style="text-align: center; margin-bottom: 40px;">
+    <div id="sessions" class="revealable" style="text-align: center; margin-bottom: 40px;">
                 <h2>Speakers & Sessions</h2>
-                <p>This section will hold information about the speakers and the workshops they will lead.</p>
+                <p><strong>10:00 AM:</strong> "Stress Management 101" with Dr. Smith</p>
+                <p><strong>12:00 PM:</strong> Guided Meditation Group</p>
+                <p><strong>1:00 PM:</strong> "Balancing Work & School" Panel</p>
     </div>
 
-    <div id="schedule-title" style="text-align: center; margin-bottom: 40px;">
+    <div id="schedule-title" class="revealable" style="text-align: center; margin-bottom: 40px;">
                 <h2>Event Schedule</h2>
                 <p>A detailed timetable of all activities.</p>
     </div>   
-     <div id="resources" style="text-align: center; margin-bottom: 40px;">
-                <h2>Mental Health Resources</h2>
-                <p>mental health support and organizations.</p>
+     <div id="resources" class="revealable" style="text-align: center; margin-bottom: 40px;">
+                <h2>Resources & Community Connections</h2>
+                <p>Support isn't just online. Join us outside for runs, walks, and fresh air.</p>
+                <img src="https://images.unsplash.com/photo-1552674605-469523fbafef?q=80&w=2070&auto=format&fit=crop" 
+         alt="Community Run" 
+         style="width: 100%; max-width: 500px; border-radius: 15px; margin: 20px 0; border: 2px solid #ecf007;">
+
+    <div class="event-row">
+        
+        <div class="event-card">
+            <h3>🏃‍♂️ Atlanta BeltLine 5K</h3>
+            <p><strong>Date:</strong> Dec 20th @ 8:00 AM</p>
+            <p>Starts at Piedmont Park. All paces welcome!</p>
+            <a href="https://beltline.org/" target="_blank">View Route</a>
+        </div>
+
+        <div class="event-card">
+            <h3>🧘‍♀️ Sunrise Yoga at the Park</h3>
+            <p><strong>Date:</strong> Dec 21st @ 7:00 AM</p>
+            <p>Centennial Park. Free guided flow.</p>
+            <a href="#" target="_blank">Sign Up</a>
+        </div>
+
+    </div>
+
+    <p style="margin-top: 30px; font-style: italic;">Need professional help? See links below.</p>
+</div>
      </div>
         <!-- rsvp [PLACEHOLDER] [ADDED IN UNIT 6] -->
          <!-- rsvp
@@ -142,7 +170,7 @@ When To Modify:
 - [ ] Project 6 (STRETCH FEATURE) 
 - [ ] Any time after
 --> 
-<div id="rsvp">
+<div id="rsvp" class="revealable">
     <h2>RSVP</h2>
     <div class="rsvp-container">
         
@@ -174,6 +202,29 @@ When To Modify:
 
     </div> </div>
         <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
+         <!-- success modal
+
+Purpose:
+- Modal that appears when a user successfully signs up for the event
+- Contains a personalized message and image
+
+When To Modify:
+- [ ] Project 9 (REQUIRED FEATURE)
+- [ ] Project 9 (STRETCH FEATURE) 
+- [ ] Any time after
+--> 
+
+<div id="success-modal" class="modal">
+    <div class="modal-container">
+        <div id="modal-item">
+            <p id="modal-text">Thanks for signing up!</p>
+        </div>
+        <div id="modal-item">
+            <img id="modal-image" src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" alt="Party Popper" width="100">
+        </div>
+    </div>
+</div>
+
 
         <!-- links
 
