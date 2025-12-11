@@ -1,3 +1,1 @@
-
-
-!(https://imgur.com/a/iX2tvoM)
+[Configuration Demo](https://imgur.com/a/EzyNjX3)
